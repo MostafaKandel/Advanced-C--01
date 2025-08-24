@@ -6,26 +6,44 @@ namespace Advanced_C__01
     {
 
         // without generic
-        public static void ReverseList(ArrayList arrList)
-        {
-            for (int i = 0; i < (arrList.Count) / 2; i++)
-            {
-                object temp = arrList[i]; ;
-                arrList[i] = arrList[arrList.Count - 1 - i];
-                arrList[arrList.Count - 1 - i] = temp;
+        //public static void ReverseList(ArrayList arrList)
+        //{
+        //    for (int i = 0; i < (arrList.Count) / 2; i++)
+        //    {
+        //        object temp = arrList[i]; ;
+        //        arrList[i] = arrList[arrList.Count - 1 - i];
+        //        arrList[arrList.Count - 1 - i] = temp;
 
-            }
-        }
+        //    }
+        //}
 
-        public static void ReverseObject<T>(List<T> list)
-        {
-            for (int i = 0; i < list.Count / 2; i++)
+        //public static void ReverseObject<T>(List<T> list)
+        //{
+        //    for (int i = 0; i < list.Count / 2; i++)
+        //    {
+        //        T temp = list[i];
+        //        list[i] = list[list.Count - 1 - i];
+        //        list[list.Count - 1 - i] = temp;
+        //    }
+        //}
+
+        public static List<int> EvenList(List<int> list) { 
+              
+            List<int> evenNumbers = new List<int>();
+            for (int i = 0; i < list.Count; i++)
             {
-                T temp = list[i];
-                list[i] = list[list.Count - 1 - i];
-                list[list.Count - 1 - i] = temp;
+
+
+                if (list[i] > 0 && list[i] % 2 == 0)
+                {
+                    evenNumbers.Add(list[i]);
+                }
             }
+
+             return evenNumbers;
+        
         }
+        
         static void Main(string[] args)
         {
             #region Q1
@@ -52,22 +70,29 @@ namespace Advanced_C__01
             //    Console.WriteLine(item);
 
 
-            List<int> numbersList= new List<int>(){ 1, 2, 3, 4, 5, 6, 7 };
-            Console.WriteLine("Before reverse");
+            //  List<int> numbersList= new List<int>(){ 1, 2, 3, 4, 5, 6, 7 };
+            //  Console.WriteLine("Before reverse");
+            //  foreach (int item in numbersList)
+            //      Console.WriteLine(item);
+
+            //  Console.WriteLine("after reverse");
+            //ReverseObject<int>(numbersList);
+
+            //  foreach (int item in numbersList)
+            //      Console.WriteLine(item);
+            #endregion
+
+            #region Q3
+
+            List<int> numbersList = new List<int>() { 1, 2, 3, 4, 5, 6, 7 };
+            Console.WriteLine("Before extract even");
             foreach (int item in numbersList)
                 Console.WriteLine(item);
 
-            Console.WriteLine("after reverse");
-          ReverseObject<int>(numbersList);
-
-            foreach (int item in numbersList)
+            Console.WriteLine("after extract");
+            
+            foreach (int item in EvenList(numbersList))
                 Console.WriteLine(item);
-
-
-
-
-
-
 
             #endregion
         }
