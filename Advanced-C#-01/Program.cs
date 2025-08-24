@@ -45,28 +45,27 @@ namespace Advanced_C__01
         //}
 
         #region Q5
+        //public static int FirstNonRepeatedChar(string input)
+        //{
+        //    Dictionary<char, int> repeated = new Dictionary<char, int>();
+        //    string stringInsensitive = input.ToLower();
+        //    // store char and count of repeating
+        //    foreach (char c in stringInsensitive)
+        //    {
+        //        if (repeated.ContainsKey(c))
+        //            repeated[c]++;
+        //        else repeated[c] = 1;
+        //    }
 
-        public static int FirstNonRepeatedChar(string input)
-        {
-            Dictionary<char, int> repeated = new Dictionary<char, int>();
-            string stringInsensitive = input.ToLower();
-            // store char and count of repeating
-            foreach (char c in stringInsensitive)
-            {
-                if (repeated.ContainsKey(c))
-                    repeated[c]++;
-                else repeated[c] = 1;
-            }
+        //    // find the first non-repeated char
 
-            // find the first non-repeated char
-
-            for (int i = 0; i < stringInsensitive.Length; i++)
-            {
-                if (repeated[stringInsensitive[i]] == 1)
-                    return i;
-            }
-            return -1;
-        }
+        //    for (int i = 0; i < stringInsensitive.Length; i++)
+        //    {
+        //        if (repeated[stringInsensitive[i]] == 1)
+        //            return i;
+        //    }
+        //    return -1;
+        //}
 
         #endregion
         static void Main(string[] args)
@@ -121,16 +120,30 @@ namespace Advanced_C__01
 
             #endregion
 
+            #region Q4
+
+            FixedSizeList<int> list = new FixedSizeList<int>(2);
+            list.Add(10);
+            list.Add(25);
+ 
+
+           
+
+            Console.WriteLine(list.Get(1));
+            Console.WriteLine(list.Get(0));
+            #endregion
+
+
             #region Q5
 
-            string s1 = "Hhello";
-            string s2 = "ahmed";
+            //string s1 = "Hhello";
+            //string s2 = "ahmed";
 
-            int first = FirstNonRepeatedChar(s1);
-            int second = FirstNonRepeatedChar(s2);
+            //int first = FirstNonRepeatedChar(s1);
+            //int second = FirstNonRepeatedChar(s2);
 
-            Console.WriteLine($"the string is : {s1} and the index of first non-repeated-char is {first} and the first non-repeated char is {s1[first]}");
-            Console.WriteLine($"the string is : {s2} and the index of first non-repeated-char is {second} and the first non-repeated char is {s2[second]}");
+            //Console.WriteLine($"the string is : {s1} and the index of first non-repeated-char is {first} and the first non-repeated char is {s1[first]}");
+            //Console.WriteLine($"the string is : {s2} and the index of first non-repeated-char is {second} and the first non-repeated char is {s2[second]}");
 
             #endregion
 
